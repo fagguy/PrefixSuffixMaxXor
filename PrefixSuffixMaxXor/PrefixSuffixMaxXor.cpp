@@ -10,7 +10,9 @@ int main()
 	GenerateSuffixArray();
 	maxXor = max(maxXor, *max_element(SuffixArray + 1, SuffixArray + N));
 
+	AddSuffixArrayToTrie();
 	GetPrefixSuffixMaxXor();
+
 	cout << "Max XOR is: " << maxXor << endl;
 
 	system("Pause");
