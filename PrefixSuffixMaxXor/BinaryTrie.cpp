@@ -9,7 +9,7 @@ BinaryTrie::~BinaryTrie()
 {
 }
 
-void BinaryTrie::Insert(bitset<WORD_SIZE>& binaryString)
+void BinaryTrie::Insert(bitset<WORD_SIZE> binaryString)
 {
 	_node * current = &(*_root);
 
@@ -26,12 +26,12 @@ void BinaryTrie::Insert(bitset<WORD_SIZE>& binaryString)
 	++current->occurence;
 }
 
-bool BinaryTrie::Find(bitset<WORD_SIZE>& binaryString)
+bool BinaryTrie::Find(bitset<WORD_SIZE> binaryString)
 {
 	return this->__Find(binaryString);
 }
 
-bool BinaryTrie::Remove(bitset<WORD_SIZE>& binaryString)
+bool BinaryTrie::Remove(bitset<WORD_SIZE> binaryString)
 {
 	// tries to get the last node of the path that represents the binary string
 	_node * node = this->__Find(binaryString);
@@ -60,7 +60,7 @@ bool BinaryTrie::Remove(bitset<WORD_SIZE>& binaryString)
 	return true;
 }
 
-ullong BinaryTrie::QueryMaxXorCombination(bitset<WORD_SIZE>& binaryString)
+ullong BinaryTrie::QueryMaxXorCombination(bitset<WORD_SIZE> binaryString)
 {
 	bitset<WORD_SIZE> xorResult;
 	_node * current = &(*_root);
@@ -116,26 +116,4 @@ bool BinaryTrie::__HasChildren(_node * node)
 bool BinaryTrie::__HasFork(_node * node)
 {
 	return (node->child[0] && node->child[1]);
-}
-
-
-
-int main()
-{
-	BinaryTrie trie;
-
-	trie.Insert(bitset<WORD_SIZE>("1011"));
-	trie.Insert(bitset<WORD_SIZE>("1111"));
-	trie.Insert(bitset<WORD_SIZE>("1111"));
-
-	trie.Remove(bitset<WORD_SIZE>("1111"));
-	trie.Remove(bitset<WORD_SIZE>("1111"));
-
-	trie.Insert(bitset<WORD_SIZE>("1111"));
-
-	if (trie.Find(bitset<WORD_SIZE>("1111"))) cout << "Found!" << endl;
-	else cout << "Not found..." << endl;
-
-	system("Pause");
-	return 0;
 }

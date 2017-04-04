@@ -25,13 +25,13 @@ public:
 	~BinaryTrie();
 
 	// insert unsigned long long into trie
-	void Insert(bitset<WORD_SIZE>& binaryString);
+	void Insert(bitset<WORD_SIZE> binaryString);
 	// check if unsigned long long exists in trie
-	bool Find(bitset<WORD_SIZE>& binaryString);
+	bool Find(bitset<WORD_SIZE> binaryString);
 	// remove unsigned long long from trie
-	bool Remove(bitset<WORD_SIZE>& binaryString);
+	bool Remove(bitset<WORD_SIZE> binaryString);
 	// check the maximum XOR combination possible based on items in the trie and the input
-	ullong QueryMaxXorCombination(bitset<WORD_SIZE>& binaryString);
+	ullong QueryMaxXorCombination(bitset<WORD_SIZE> binaryString);
 
 private:
 	_node * __CreateNodeAtPointer(unique_ptr<_node>& pointer, _node * parent);

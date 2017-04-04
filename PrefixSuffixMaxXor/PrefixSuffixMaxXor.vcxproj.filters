@@ -18,9 +18,15 @@
     <ClInclude Include="BinaryTrie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PrefixSuffixMaxXor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinaryTrie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrefixSuffixMaxXor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
